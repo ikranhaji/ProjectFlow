@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <main>
+            <div>
+                <h1>My Projects</h1>
+                {% if project_list|length == 0%}
+                    <p>You are not assigned to any projects</p>
+                {% else %}
+                <table>
+                    <thread>
+                        <tr>
+                            <td>Name</td>
+                            <td>Number of tasks</td>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        {% for project in project_list%}
+                        <tr>
+                            <td>{{project.name}}</td>
+                            <td>{{project.all|length}}</td>
+                        </tr>
+                        {% endfor%}
+                {% endif %}
+                </table>
+            </div>
+        </main>
+    </body>
+</html>
