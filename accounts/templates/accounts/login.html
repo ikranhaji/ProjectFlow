@@ -1,18 +1,24 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-    </head>
+    {% block title %}
+        <head>
+            <title></title>
+        </head>
+    {% endblock title %}
     <body>
-        <main>
-            <div>
-                <h1>Login</h1>
-                <form method ="post">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button>Login</button>
-                </form>
-            </div>
-        </main>
+        {% block content %}
+            <main>
+                <div>
+                    <h1>Login</h1>
+                    <form method ="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button>Login</button>
+                    </form>
+                </div>
+            </main>
+        {% endblock content %}
     </body>
 </html>
